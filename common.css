@@ -126,14 +126,16 @@ p.invalid {
     padding-top: 10px;
 }
 
+.pages #previous, .pages #next {
+    width: 120px;
+}
+
 .pages #previous {
-    width: 70px;
     float: left;
     text-align: left;
 }
 
 .pages #next {
-    width: 70px;
     float: right;
     text-align: right;
 }
@@ -174,7 +176,7 @@ table {
     border-spacing: 0px;
 }
 
-table:not(.ui-datepicker-calendar) tr:nth-child(even) {
+table tr:nth-child(even) {
     background-color: #303030;
     border-color: #303030;
 }
@@ -238,7 +240,6 @@ input, textarea {
     font-size: inherit;
     padding: 2px 4px;
     border: solid 1px #cccccc;
-    border-radius: 0;
 }
 
 textarea {
@@ -247,10 +248,25 @@ textarea {
     font-family: unset;
 }
 
-input[type="text"], input[type="password"], input[type="number"], input[type="search"] {
+input[type="text"], input[type="password"], input[type="number"], input[type="search"], input[type="date"] {
     width: 100%;
     font-size: 14px;
     font-family: inherit;
+    border-radius: 0;
+}
+
+input[type="text"], input[type="search"], input[type="date"] {
+    -webkit-border-radius: 0;
+    -webkit-appearance: none;
+}
+
+input::-webkit-date-and-time-value {
+    min-height: 18px;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    margin-left: -5px;
+    color-scheme: dark;
 }
 
 select {
@@ -296,26 +312,7 @@ select option { background-color: #222222; }
     font-size: 12px;
 }
 
-
-.ui-datepicker {
-    background-color: #111111;
-}
-
-.ui-state-highlight {
-    background-color: #dddddd !important;
-    border-color: #000000 !important;
-    color: #000000 !important;
-}
-
-.ui-state-active {
-    background-color: #888888 !important;
-    border-color:
-    #000000 !important;
-    color: #ffffff
-    !important;
-}
-
-table.ui-datepicker-calendar th {
-    color: #000000;
+.small-screen .pages #previous, .small-screen .pages #next {
+    width: 90px;
 }
 
